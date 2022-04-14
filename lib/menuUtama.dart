@@ -54,6 +54,9 @@ class menuUtama extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 8.0,
                     )
                   ],
                 ),
