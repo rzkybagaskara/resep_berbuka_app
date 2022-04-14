@@ -2,15 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:resep_berbuka/model/bullet_widget.dart';
 import 'package:resep_berbuka/data_resep/resep.dart';
 
-class detailMenu extends StatefulWidget {
+class detailMenu extends StatelessWidget {
   final Resep resep;
   detailMenu({required this.resep});
-
-  @override
-  State<detailMenu> createState() => _detailMenuState();
-}
-
-class _detailMenuState extends State<detailMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +25,7 @@ class _detailMenuState extends State<detailMenu> {
                   margin: EdgeInsets.only(top: 12.0),
                   child: Center(
                     child: Text(
-                      widget.resep.judul,
+                      resep.judul,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 28.0,
@@ -49,7 +43,7 @@ class _detailMenuState extends State<detailMenu> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
                         child: Image.asset(
-                          widget.resep.imageAsset,
+                          resep.imageAsset,
                           width: 300,
                         ),
                       ),
@@ -66,19 +60,19 @@ class _detailMenuState extends State<detailMenu> {
                       Column(
                         children: [
                           Icon(Icons.timelapse, size: 30),
-                          Text(widget.resep.waktu),
+                          Text(resep.waktu),
                         ],
                       ),
                       Column(
                         children: <Widget>[
                           Icon(Icons.restaurant_outlined, size: 30),
-                          Text(widget.resep.porsi),
+                          Text(resep.porsi),
                         ],
                       ),
                       Column(
                         children: <Widget>[
                           Icon(Icons.icecream, size: 30),
-                          Text(widget.resep.jenis),
+                          Text(resep.jenis),
                         ],
                       ),
                     ],
@@ -106,7 +100,7 @@ class _detailMenuState extends State<detailMenu> {
                   ),
                   child: BulletList(
                     [
-                      widget.resep.bahan,
+                      resep.bahan,
                     ],
                   ),
                 ),
@@ -130,7 +124,7 @@ class _detailMenuState extends State<detailMenu> {
                   child: (
                       // Kurang line height
                       BulletList(
-                    [widget.resep.langkah],
+                    [resep.langkah],
                   )),
                 ),
               ],

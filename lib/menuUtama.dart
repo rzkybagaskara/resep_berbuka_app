@@ -37,11 +37,13 @@ class menuUtama extends StatelessWidget {
                 ),
                 child: Column(
                   children: <Widget>[
-                    Image.asset(
-                      resep.imageAsset,
-                      height: 150,
-                      width: 200,
-                      fit: BoxFit.cover,
+                    Expanded(
+                      child: Image.asset(
+                        resep.imageAsset,
+                        height: 150,
+                        width: 200,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 10.0),
